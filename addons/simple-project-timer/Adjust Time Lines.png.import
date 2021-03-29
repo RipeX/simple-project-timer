@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Adjust Time Lines.png-d67cf21775d8068f577c2e095a4d3c40.stex"
+path="res://.import/Adjust Time Lines.png-3d2d74f88032c0c289e3e149bda0da69.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/Ross's Project Timer/Adjust Time Lines.png"
-dest_files=[ "res://.import/Adjust Time Lines.png-d67cf21775d8068f577c2e095a4d3c40.stex" ]
+source_file="res://addons/simple-project-timer/Adjust Time Lines.png"
+dest_files=[ "res://.import/Adjust Time Lines.png-3d2d74f88032c0c289e3e149bda0da69.stex" ]
 
 [params]
 

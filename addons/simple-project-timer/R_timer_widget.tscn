@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://addons/Ross's Project Timer/R_timer_widget.gd" type="Script" id=1]
-[ext_resource path="res://addons/Ross's Project Timer/Timer Icon_44.png" type="Texture" id=2]
-[ext_resource path="res://addons/Ross's Project Timer/Adjust Time Lines.png" type="Texture" id=3]
+[ext_resource path="res://addons/simple-project-timer/Timer Icon_44.png" type="Texture" id=1]
+[ext_resource path="res://addons/simple-project-timer/Adjust Time Lines.png" type="Texture" id=2]
+[ext_resource path="res://addons/simple-project-timer/R_timer_widget.gd" type="Script" id=3]
 
 [sub_resource type="ShaderMaterial" id=1]
 
@@ -76,7 +76,7 @@ tracks/2/keys = {
 margin_right = 94.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 94, 28 )
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -115,7 +115,7 @@ margin_right = 32.0
 margin_bottom = 32.0
 rect_scale = Vector2( 0.45, 0.45 )
 mouse_filter = 2
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="."]
@@ -190,7 +190,7 @@ margin_left = 7.0
 margin_top = -15.5
 margin_right = 47.0
 margin_bottom = 24.5
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Time SpinBox" type="SpinBox" parent="Menu/GridBox/Add Time Button"]
 anchor_left = 1.0

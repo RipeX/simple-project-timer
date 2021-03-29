@@ -1,8 +1,8 @@
 extends Button
 tool
 
-var save_filepath = "res://addons/Ross's Project Timer/time.sav"
-var options_filepath = "res://addons/Ross's Project Timer/options.sav"
+var save_filepath = "res://addons/simple-project-timer/time.sav"
+var options_filepath = "res://addons/simple-project-timer/options.sav"
 
 var t = 0
 var manually_paused = false
@@ -56,14 +56,14 @@ func load_time():
 	save.open(save_filepath, File.READ)
 	t = save.get_64()
 	save.close()
-	print("[Ross's Project Timer] Loading . . . Time: ", t)
+	print("[simple-project-timer] Loading . . . Time: ", t)
 
 func save_time():
 	var save = File.new()
 	save.open(save_filepath, File.WRITE)
 	save.store_64(t)
 	save.close()
-	print("[Ross's Project Timer] Saving . . . Time: ", t)
+	print("[simple-project-timer] Saving . . . Time: ", t)
 
 func load_options():
 	var save = File.new()

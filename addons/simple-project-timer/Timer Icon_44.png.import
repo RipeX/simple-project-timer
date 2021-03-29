@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Timer Icon_44.png-79a2bad88a873c01047028f3fac82fa5.stex"
+path="res://.import/Timer Icon_44.png-84d4c632f31022a31f055eac60426d3f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/Ross's Project Timer/Timer Icon_44.png"
-dest_files=[ "res://.import/Timer Icon_44.png-79a2bad88a873c01047028f3fac82fa5.stex" ]
+source_file="res://addons/simple-project-timer/Timer Icon_44.png"
+dest_files=[ "res://.import/Timer Icon_44.png-84d4c632f31022a31f055eac60426d3f.stex" ]
 
 [params]
 
