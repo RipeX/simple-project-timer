@@ -10,4 +10,5 @@ func _enter_tree():
 	widget.initialize()
 
 func _exit_tree():
-	widget.free()
+	widget.queue_free()
+

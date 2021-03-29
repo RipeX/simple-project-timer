@@ -22,8 +22,8 @@ func initialize():
 	load_time()
 	load_options()
 
-func _input_event(event):
-	if event.type == InputEvent.MOUSE_BUTTON and event.pressed and event.button_index == BUTTON_RIGHT:
+func _gui_input(event):  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_RIGHT:  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 		PauseResume_Button_pressed()
 		accept_event()
 
@@ -70,8 +70,7 @@ func load_options():
 	if not save.file_exists(options_filepath):
 		save_options()
 	save.open(options_filepath, File.READ)
-	var data = {}
-	data.parse_json(save.get_line())
+	var data = parse_json(save.get_line())
 	for k in data.keys():
 		set(k, data[k])
 	# Update buttons and stuff to match settings:
@@ -80,8 +79,8 @@ func load_options():
 	get_node("Menu/GridBox/Show Seconds Toggle").set_pressed(show_seconds)
 	update_text()
 	get_node("Menu/GridBox/Only-Mouseover Toggle").set_pressed(only_show_mouseover)
-	get_node("Label").set_hidden(only_show_mouseover)
-	get_node("Timer Icon").set_hidden(not only_show_mouseover)
+	get_node("Label").visible = !(only_show_mouseover)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+	get_node("Timer Icon").visible = !(not only_show_mouseover)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	get_node("Menu/GridBox/GridContainer/Collapsible Toggle").set_pressed(collapsible)
 	if only_show_mouseover and collapsible:
 		collapse(true)
@@ -96,7 +95,7 @@ func save_options():
 				"show_seconds"		 : show_seconds,
 				"only_show_mouseover": only_show_mouseover,
 				"collapsible"		 : collapsible}
-	save.store_line(data.to_json())
+	save.store_line(to_json(data))
 	save.close()
 
 func _exit_tree():
@@ -105,11 +104,11 @@ func _exit_tree():
 
 func button_pressed():
 	get_node("Menu").popup()
-	get_node("Menu").set_global_pos(get_global_pos() - Vector2(0, -26))
+	get_node("Menu").set_global_position(get_global_position() - Vector2(0, -26))  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 
 func Reset_Button_pressed():
 	get_node("ResetConfirm").popup()
-	get_node("ResetConfirm").set_global_pos(get_global_pos() + Vector2(-330, 52))
+	get_node("ResetConfirm").set_global_position(get_global_position() + Vector2(-330, 52))  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 
 func ResetConfirm_confirmed():
 	t = 0
@@ -129,12 +128,12 @@ func Subtract_Button_pressed():
 	update_text()
 
 func PauseResume_Button_pressed():
-	if get_node("Timer").is_processing():
-		pause()
-		manually_paused = true
-	else:
+	if get_node("Timer").is_stopped():
 		resume()
 		manually_paused = false
+	else:
+		pause()
+		manually_paused = true
 
 func pause():
 	get_node("Timer").stop()
@@ -144,18 +143,18 @@ func pause():
 		if not get_node("AnimationPlayer").is_playing(): # so it can be called while paused with no jumps
 			get_node("AnimationPlayer").play("paused")
 	else:
-		get_node("Label").set_opacity(0.4)
-		get_node("AnimationPlayer").stop_all() # since changing use_anim depends on this to update things
-		get_node("Timer Icon").set_opacity(0.4)
+		get_node("Label").modulate.a = 0.4  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+		get_node("AnimationPlayer").stop() # since changing use_anim depends on this to update things
+		get_node("Timer Icon").modulate.a = 0.4  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 
 func resume():
-	if not get_node("Timer").is_processing():
+	if get_node("Timer").is_stopped():
 		get_node("Timer").start()
 	get_node("Pause Icon").hide()
 	get_node("Menu/GridBox/Pause-Resume Button").set_text("Pause")
-	get_node("AnimationPlayer").stop_all()
-	get_node("Label").set_opacity(1.0)
-	get_node("Timer Icon").set_opacity(1.0)
+	get_node("AnimationPlayer").stop()
+	get_node("Label").modulate.a = 1.0  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+	get_node("Timer Icon").modulate.a = 1.0  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 
 func SwitchPause_Toggle_pressed():
 	pause_on_switch = get_node("Menu/GridBox/Switch-Pause Toggle").is_pressed()
@@ -171,8 +170,8 @@ func Show_Seconds_Toggle_pressed():
 
 func OnlyMouseover_Toggle_pressed():
 	only_show_mouseover = get_node("Menu/GridBox/Only-Mouseover Toggle").is_pressed()
-	get_node("Label").set_hidden(only_show_mouseover)
-	get_node("Timer Icon").set_hidden(not only_show_mouseover)
+	get_node("Label").visible = !(only_show_mouseover)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+	get_node("Timer Icon").visible = !(not only_show_mouseover)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	if collapsible:
 		if not only_show_mouseover: collapse(false)
 		elif not has_focus(): collapse(true)
@@ -200,3 +199,4 @@ func mouse_exit():
 		get_node("Label").hide()
 		get_node("Timer Icon").show()
 		if collapsible: collapse(true)
+

@@ -1,0 +1,346 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/Ross's Project Timer/R_timer_widget.gd" type="Script" id=1]
+[ext_resource path="res://addons/Ross's Project Timer/Timer Icon_44.png" type="Texture" id=2]
+[ext_resource path="res://addons/Ross's Project Timer/Adjust Time Lines.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+
+[sub_resource type="Animation" id=2]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.8, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.5, 0.1, 0.1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Timer Icon:modulate:a")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.8, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.5, 0.1, 0.1 ]
+}
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_min_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( -2.54912, 1 ),
+"update": 0,
+"values": [ Vector2( 94, 28 ), Vector2( 28, 28 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( -2.54912, 1 ),
+"update": 0,
+"values": [ Vector2( 94, 28 ), Vector2( 28, 28 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Pause Icon:material/material:shader_param/opacity")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( -2.54912, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[node name="Control" type="Button"]
+margin_right = 94.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 94, 28 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause Icon" type="Control" parent="."]
+visible = false
+material = SubResource( 1 )
+margin_left = 85.0
+margin_top = 8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="Pause Icon"]
+use_parent_material = true
+scale = Vector2( 0.52, 0.52 )
+color = Color( 1, 1, 1, 0.282353 )
+polygon = PoolVector2Array( -6.85583, -7.56596, -6.51194, -7.9797, -2.5173, -7.97307, -2.15884, -7.57486, -2.1521, 7.58931, -2.54666, 7.98387, -6.44676, 7.98387, -6.8565, 7.52861 )
+
+[node name="Polygon2D1" type="Polygon2D" parent="Pause Icon"]
+use_parent_material = true
+rotation = -3.14159
+scale = Vector2( 0.52, -0.52 )
+color = Color( 1, 1, 1, 0.282353 )
+polygon = PoolVector2Array( -6.85583, -7.56596, -6.51194, -7.9797, -2.5173, -7.97307, -2.15884, -7.57486, -2.1521, 7.58931, -2.54666, 7.98387, -6.44676, 7.98387, -6.8565, 7.52861 )
+
+[node name="Timer Icon" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 32.0
+margin_bottom = 32.0
+rect_scale = Vector2( 0.45, 0.45 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+margin_left = 7.0
+margin_top = 2.0
+margin_right = 87.0
+margin_bottom = 16.0
+mouse_filter = 1
+size_flags_vertical = 0
+text = "0:09:59"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/paused = SubResource( 2 )
+
+[node name="Collapse Anim" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/collapse = SubResource( 3 )
+
+[node name="Menu" type="PopupMenu" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 4.0
+margin_right = 225.0
+margin_bottom = 267.0
+
+[node name="GridBox" type="GridContainer" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+mouse_filter = 0
+custom_constants/vseparation = 0
+
+[node name="Pause-Resume Button" type="ToolButton" parent="Menu/GridBox"]
+margin_right = 208.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "Pause"
+flat = false
+align = 0
+
+[node name="Add Time Button" type="ToolButton" parent="Menu/GridBox"]
+margin_top = 22.0
+margin_right = 208.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 50 )
+hint_tooltip = "Set to negative value to subtract time. "
+focus_mode = 0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+enabled_focus_mode = 0
+text = "Adjust Time"
+align = 0
+
+[node name="Connection Lines" type="TextureRect" parent="Menu/GridBox/Add Time Button"]
+modulate = Color( 1, 1, 1, 0.12549 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 7.0
+margin_top = -15.5
+margin_right = 47.0
+margin_bottom = 24.5
+texture = ExtResource( 3 )
+
+[node name="Time SpinBox" type="SpinBox" parent="Menu/GridBox/Add Time Button"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -77.0
+margin_top = -12.5
+margin_right = -1.0
+margin_bottom = 11.5
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 999999.0
+value = 60.0
+exp_edit = true
+suffix = "min"
+
+[node name="Add Button" type="Button" parent="Menu/GridBox/Add Time Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.0
+margin_top = -20.5
+margin_right = 15.0
+margin_bottom = -0.5
+text = "Add"
+
+[node name="Subtract Button" type="Button" parent="Menu/GridBox/Add Time Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.0
+margin_top = 1.5
+margin_right = 15.0
+margin_bottom = 21.5
+text = "Sub"
+
+[node name="Reset Button" type="ToolButton" parent="Menu/GridBox"]
+margin_top = 72.0
+margin_right = 208.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+text = "Reset Time"
+flat = false
+align = 0
+
+[node name="HSeparator1" type="HSeparator" parent="Menu/GridBox"]
+margin_top = 94.0
+margin_right = 208.0
+margin_bottom = 99.0
+mouse_filter = 1
+size_flags_vertical = 3
+
+[node name="Switch-Pause Toggle" type="CheckBox" parent="Menu/GridBox"]
+margin_top = 99.0
+margin_right = 208.0
+margin_bottom = 123.0
+pressed = true
+text = "Pause on window switch"
+
+[node name="Use-Anim Toggle" type="CheckBox" parent="Menu/GridBox"]
+margin_top = 123.0
+margin_right = 208.0
+margin_bottom = 147.0
+hint_tooltip = "Disabling this may save a percent or two of
+your CPU usage while the timer is paused. "
+pressed = true
+text = "Use pause animation"
+
+[node name="Show Seconds Toggle" type="CheckBox" parent="Menu/GridBox"]
+margin_top = 147.0
+margin_right = 208.0
+margin_bottom = 171.0
+pressed = true
+text = "Show seconds"
+
+[node name="Only-Mouseover Toggle" type="CheckBox" parent="Menu/GridBox"]
+margin_top = 171.0
+margin_right = 208.0
+margin_bottom = 195.0
+text = "Only show on mouseover"
+
+[node name="GridContainer" type="GridContainer" parent="Menu/GridBox"]
+margin_top = 195.0
+margin_right = 208.0
+margin_bottom = 219.0
+mouse_filter = 0
+columns = 2
+
+[node name="Indent" type="Control" parent="Menu/GridBox/GridContainer"]
+margin_right = 24.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 24, 0 )
+
+[node name="Collapsible Toggle" type="CheckBox" parent="Menu/GridBox/GridContainer"]
+margin_left = 28.0
+margin_right = 206.0
+margin_bottom = 24.0
+text = "Collapse on mouse exit"
+
+[node name="HSeparator" type="HSeparator" parent="Menu/GridBox"]
+margin_top = 219.0
+margin_right = 208.0
+margin_bottom = 224.0
+mouse_filter = 1
+size_flags_vertical = 3
+
+[node name="Close Button" type="ToolButton" parent="Menu/GridBox"]
+margin_top = 224.0
+margin_right = 208.0
+margin_bottom = 246.0
+size_flags_horizontal = 3
+text = "Close Menu"
+flat = false
+align = 0
+
+[node name="Version Label" type="Label" parent="Menu"]
+modulate = Color( 1, 1, 1, 0.15 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -64.0
+margin_top = -18.0
+margin_right = -6.0
+margin_bottom = -4.0
+mouse_filter = 1
+size_flags_vertical = 0
+text = "1.1.0"
+align = 2
+
+[node name="ResetConfirm" type="ConfirmationDialog" parent="."]
+margin_left = -338.0
+margin_top = 52.0
+margin_right = -7.0
+margin_bottom = 110.0
+dialog_text = "Are you sure you want to reset the timer to zero?"
+
+[connection signal="mouse_entered" from="." to="." method="mouse_enter"]
+[connection signal="mouse_exited" from="." to="." method="mouse_exit"]
+[connection signal="pressed" from="Menu/GridBox/Pause-Resume Button" to="." method="PauseResume_Button_pressed"]
+[connection signal="pressed" from="Menu/GridBox/Add Time Button/Add Button" to="." method="Add_Button_pressed"]
+[connection signal="pressed" from="Menu/GridBox/Add Time Button/Subtract Button" to="." method="Subtract_Button_pressed"]
+[connection signal="pressed" from="Menu/GridBox/Reset Button" to="." method="Reset_Button_pressed"]
+[connection signal="pressed" from="Menu/GridBox/Switch-Pause Toggle" to="." method="SwitchPause_Toggle_pressed"]
+[connection signal="pressed" from="Menu/GridBox/Use-Anim Toggle" to="." method="UseAnim_Toggle_pressed"]
+[connection signal="pressed" from="Menu/GridBox/Show Seconds Toggle" to="." method="Show_Seconds_Toggle_pressed"]
+[connection signal="pressed" from="Menu/GridBox/Only-Mouseover Toggle" to="." method="OnlyMouseover_Toggle_pressed"]
+[connection signal="pressed" from="Menu/GridBox/GridContainer/Collapsible Toggle" to="." method="Collapsible_Toggle_pressed"]
+[connection signal="pressed" from="Menu/GridBox/Close Button" to="." method="Close_Button_pressed"]
+[connection signal="confirmed" from="ResetConfirm" to="." method="ResetConfirm_confirmed"]
