@@ -52,7 +52,7 @@ You can right-click on the plugin button to quickly pause and resume.
 
 ### Bugs / Feedback
 
-None
+- None
 
 If you find any bugs or have some feedback about things you would like to see changed or added, make an issue on github:
 
