@@ -141,12 +141,16 @@ playback_speed = 2.0
 anims/collapse = SubResource( 3 )
 
 [node name="Menu" type="PopupMenu" parent="."]
+visible = true
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
 margin_top = 4.0
-margin_right = 225.0
-margin_bottom = 267.0
+margin_right = 256.0
+margin_bottom = 292.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GridBox" type="GridContainer" parent="Menu"]
 anchor_right = 1.0
@@ -159,7 +163,7 @@ mouse_filter = 0
 custom_constants/vseparation = 0
 
 [node name="Pause-Resume Button" type="ToolButton" parent="Menu/GridBox"]
-margin_right = 208.0
+margin_right = 239.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
 text = "Pause"
@@ -168,7 +172,7 @@ align = 0
 
 [node name="Add Time Button" type="ToolButton" parent="Menu/GridBox"]
 margin_top = 22.0
-margin_right = 208.0
+margin_right = 239.0
 margin_bottom = 72.0
 rect_min_size = Vector2( 0, 50 )
 hint_tooltip = "Set to negative value to subtract time. "
@@ -232,7 +236,7 @@ text = "Sub"
 
 [node name="Reset Button" type="ToolButton" parent="Menu/GridBox"]
 margin_top = 72.0
-margin_right = 208.0
+margin_right = 239.0
 margin_bottom = 94.0
 size_flags_horizontal = 3
 text = "Reset Time"
@@ -241,44 +245,44 @@ align = 0
 
 [node name="HSeparator1" type="HSeparator" parent="Menu/GridBox"]
 margin_top = 94.0
-margin_right = 208.0
-margin_bottom = 99.0
+margin_right = 239.0
+margin_bottom = 112.0
 mouse_filter = 1
 size_flags_vertical = 3
 
 [node name="Switch-Pause Toggle" type="CheckBox" parent="Menu/GridBox"]
-margin_top = 99.0
-margin_right = 208.0
-margin_bottom = 123.0
+margin_top = 112.0
+margin_right = 239.0
+margin_bottom = 136.0
 pressed = true
 text = "Pause on window switch"
 
 [node name="Use-Anim Toggle" type="CheckBox" parent="Menu/GridBox"]
-margin_top = 123.0
-margin_right = 208.0
-margin_bottom = 147.0
+margin_top = 136.0
+margin_right = 239.0
+margin_bottom = 160.0
 hint_tooltip = "Disabling this may save a percent or two of
 your CPU usage while the timer is paused. "
 pressed = true
 text = "Use pause animation"
 
 [node name="Show Seconds Toggle" type="CheckBox" parent="Menu/GridBox"]
-margin_top = 147.0
-margin_right = 208.0
-margin_bottom = 171.0
+margin_top = 160.0
+margin_right = 239.0
+margin_bottom = 184.0
 pressed = true
 text = "Show seconds"
 
 [node name="Only-Mouseover Toggle" type="CheckBox" parent="Menu/GridBox"]
-margin_top = 171.0
-margin_right = 208.0
-margin_bottom = 195.0
+margin_top = 184.0
+margin_right = 239.0
+margin_bottom = 208.0
 text = "Only show on mouseover"
 
 [node name="GridContainer" type="GridContainer" parent="Menu/GridBox"]
-margin_top = 195.0
-margin_right = 208.0
-margin_bottom = 219.0
+margin_top = 208.0
+margin_right = 239.0
+margin_bottom = 232.0
 mouse_filter = 0
 columns = 2
 
@@ -294,16 +298,16 @@ margin_bottom = 24.0
 text = "Collapse on mouse exit"
 
 [node name="HSeparator" type="HSeparator" parent="Menu/GridBox"]
-margin_top = 219.0
-margin_right = 208.0
-margin_bottom = 224.0
+margin_top = 232.0
+margin_right = 239.0
+margin_bottom = 250.0
 mouse_filter = 1
 size_flags_vertical = 3
 
 [node name="Close Button" type="ToolButton" parent="Menu/GridBox"]
-margin_top = 224.0
-margin_right = 208.0
-margin_bottom = 246.0
+margin_top = 250.0
+margin_right = 239.0
+margin_bottom = 272.0
 size_flags_horizontal = 3
 text = "Close Menu"
 flat = false
@@ -316,12 +320,12 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -64.0
-margin_top = -18.0
+margin_top = -26.0
 margin_right = -6.0
-margin_bottom = -4.0
+margin_bottom = -12.0
 mouse_filter = 1
 size_flags_vertical = 0
-text = "1.1.0"
+text = "1.0.0"
 align = 2
 
 [node name="ResetConfirm" type="ConfirmationDialog" parent="."]

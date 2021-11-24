@@ -56,7 +56,7 @@ You can right-click on the plugin button to quickly pause and resume.
 
 Currently there is one error that I know about. If you deactivate the plugin it gives this error message:
 
-- None at the moment
+- None
 
 If you find any bugs or have some feedback about things you would like to see changed or added, make an issue on github:
 
