@@ -3,7 +3,7 @@ A simple, unobtrusive, Godot engine editor plugin for tracking the time spent on
 
 Forked from https://github.com/rgrams/ross_project_timer
 
-Converted to work with Godot 3.1
+Converted to work with Godot 3.1+
 
 _v 1.0.0 Readme_
 
