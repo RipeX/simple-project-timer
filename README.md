@@ -5,7 +5,7 @@ _Converted to work with Godot 3.1+
 
 _v 1.0.0 Readme_
 
-![Screenshot](https://imgur.com/a/H3EhB3L)
+![Screenshot](https://i.imgur.com/q26ZiNJ.png)
 
 _Screenshot of plugin widget with dropdown menu open_
 
