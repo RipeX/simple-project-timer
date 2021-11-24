@@ -56,12 +56,8 @@ You can right-click on the plugin button to quickly pause and resume.
 
 Currently there is one error that I know about. If you deactivate the plugin it gives this error message:
 
-ERROR: set_persisting: Condition ' !props.has(p_name) ' is true.
-     At: core/globals.cpp:100
+- None at the moment
 
-However, every plugin I've tried, even the official ones, gives this error message. It doesn't actually seem to cause any problems. 
-If you know anything about this error, let me know. 
-
-If you find any other bugs or have some feedback about things you would like to see changed or added, make an issue on github:
+If you find any bugs or have some feedback about things you would like to see changed or added, make an issue on github:
 
 https://github.com/RipeX/simple-project-timer
