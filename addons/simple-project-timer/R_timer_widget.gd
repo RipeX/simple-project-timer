@@ -80,7 +80,7 @@ func load_options():
 	update_text()
 	get_node("Menu/GridBox/Only-Mouseover Toggle").set_pressed(only_show_mouseover)
 	get_node("Label").visible = !(only_show_mouseover)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
-	get_node("Timer Icon").visible = !(not only_show_mouseover)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+	get_node("TimerIcon").visible = !(not only_show_mouseover)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	get_node("Menu/GridBox/GridContainer/Collapsible Toggle").set_pressed(collapsible)
 	if only_show_mouseover and collapsible:
 		collapse(true)
@@ -145,7 +145,7 @@ func pause():
 	else:
 		get_node("Label").modulate.a = 0.4  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 		get_node("AnimationPlayer").stop() # since changing use_anim depends on this to update things
-		get_node("Timer Icon").modulate.a = 0.4  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+		get_node("TimerIcon").modulate.a = 0.4  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 
 func resume():
 	if get_node("Timer").is_stopped():
@@ -154,7 +154,7 @@ func resume():
 	get_node("Menu/GridBox/Pause-Resume Button").set_text("Pause")
 	get_node("AnimationPlayer").stop()
 	get_node("Label").modulate.a = 1.0  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
-	get_node("Timer Icon").modulate.a = 1.0  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+	get_node("TimerIcon").modulate.a = 1.0  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 
 func SwitchPause_Toggle_pressed():
 	pause_on_switch = get_node("Menu/GridBox/Switch-Pause Toggle").is_pressed()
@@ -171,7 +171,7 @@ func Show_Seconds_Toggle_pressed():
 func OnlyMouseover_Toggle_pressed():
 	only_show_mouseover = get_node("Menu/GridBox/Only-Mouseover Toggle").is_pressed()
 	get_node("Label").visible = !(only_show_mouseover)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
-	get_node("Timer Icon").visible = !(not only_show_mouseover)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
+	get_node("TimerIcon").visible = !(not only_show_mouseover)  #-- NOTE: Automatically converted by Godot 2 to 3 converter, please review
 	if collapsible:
 		if not only_show_mouseover: collapse(false)
 		elif not has_focus(): collapse(true)
@@ -191,12 +191,12 @@ func collapse(yes):
 func mouse_enter():
 	if only_show_mouseover:
 		get_node("Label").show()
-		get_node("Timer Icon").hide()
+		get_node("TimerIcon").hide()
 		if collapsible: collapse(false)
 
 func mouse_exit():
 	if only_show_mouseover:
 		get_node("Label").hide()
-		get_node("Timer Icon").show()
+		get_node("TimerIcon").show()
 		if collapsible: collapse(true)
 

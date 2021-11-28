@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://addons/simple-project-timer/Timer Icon_44.png" type="Texture" id=1]
-[ext_resource path="res://addons/simple-project-timer/Adjust Time Lines.png" type="Texture" id=2]
+[ext_resource path="res://addons/simple-project-timer/timer-icon.png" type="Texture" id=1]
+[ext_resource path="res://addons/simple-project-timer/adjust-time-lines.png" type="Texture" id=2]
 [ext_resource path="res://addons/simple-project-timer/R_timer_widget.gd" type="Script" id=3]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ 0.5, 0.1, 0.1 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Timer Icon:modulate:a")
+tracks/1/path = NodePath("TimerIcon:modulate:a")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -103,20 +103,21 @@ scale = Vector2( 0.52, -0.52 )
 color = Color( 1, 1, 1, 0.282353 )
 polygon = PoolVector2Array( -6.85583, -7.56596, -6.51194, -7.9797, -2.5173, -7.97307, -2.15884, -7.57486, -2.1521, 7.58931, -2.54666, 7.98387, -6.44676, 7.98387, -6.8565, 7.52861 )
 
-[node name="Timer Icon" type="TextureRect" parent="."]
-visible = false
+[node name="TimerIcon" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -10.0
 margin_top = -10.0
-margin_right = 32.0
-margin_bottom = 32.0
-rect_scale = Vector2( 0.45, 0.45 )
+margin_right = 54.0
+margin_bottom = 54.0
+rect_scale = Vector2( 0.3, 0.3 )
 mouse_filter = 2
 texture = ExtResource( 1 )
-stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="."]
 margin_left = 7.0
@@ -141,7 +142,6 @@ playback_speed = 2.0
 anims/collapse = SubResource( 3 )
 
 [node name="Menu" type="PopupMenu" parent="."]
-visible = true
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Timer Icon_44.png-84d4c632f31022a31f055eac60426d3f.stex"
+path="res://.import/timer-icon.png-163a2ffba7fbd3026b2f9dbe44894c0f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/simple-project-timer/Timer Icon_44.png"
-dest_files=[ "res://.import/Timer Icon_44.png-84d4c632f31022a31f055eac60426d3f.stex" ]
+source_file="res://addons/simple-project-timer/timer-icon.png"
+dest_files=[ "res://.import/timer-icon.png-163a2ffba7fbd3026b2f9dbe44894c0f.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
