@@ -29,7 +29,7 @@ func _gui_input(event):  #-- NOTE: Automatically converted by Godot 2 to 3 conve
 
 func _notification(what):
 	if pause_on_switch and not manually_paused:
-		if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
+		if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT or OS.is_window_minimized():
 			pause()
 		elif what == MainLoop.NOTIFICATION_WM_FOCUS_IN:
 			# Note: It's impossible to change pause_on_switch when the window is not in focus, 
